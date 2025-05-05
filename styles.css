@@ -12,11 +12,15 @@ body {
 .container {
     text-align: center;
     border: 2px solid #ff6f61;
-    background: #fff;
+    background: palegoldenrod;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     width: 550px;
+}
+
+h1 {
+    font-family: 'Public Pixel', sans-serif;
 }
 
 .main-content {
