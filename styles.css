@@ -19,7 +19,7 @@ body {
     width: 550px;
 }
 
-h1 {
+h2 {
     font-family: 'Public Pixel', sans-serif;
 }
 
@@ -49,27 +49,12 @@ h1 {
     font-size: 14px;
 }
 
-#message {
-    font-size: 12px;
-    font-family: 'Public Pixel', sans-serif;
-    margin-top: 10px;
-    line-height: 1.5;
-}
-
-#message .blue {
-    color: #4a6fa5;
-}
-
-#message .lightblue {
-    color: #7fa1c7;
-}
-
 .settings {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    margin-top: -80px;
+    margin-top: -40px;
 }
 
 .settings label {
