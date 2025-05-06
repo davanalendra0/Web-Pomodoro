@@ -11,6 +11,9 @@ const LONG_BREAK = 15 * 60;
 const timerDisplay = document.getElementById('timer-display');
 const sessionLabel = document.getElementById('session-label');
 
+const breakAudio = new Audio("break.mp3");
+const studyAudio = new Audio("focus.mp3");
+
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
@@ -43,6 +46,12 @@ function startTimer() {
                 updateDisplay();
             } else {
                 clearInterval(timer);
+                timer = null;
+                if (sessionType === "focus") {
+                    breakAudio.play();
+                } else {
+                    studyAudio.play();
+                }
                 handleSessionEnd();
             }
         }
@@ -76,13 +85,13 @@ document.getElementById('pause-btn').addEventListener('click', () => {
     isPaused = true;
 });
 document.getElementById('reset-btn').addEventListener('click', () => {
-    clearInterval(timer);      // stop the interval
-    timer = null;              // reset the timer variable
-    isPaused = false;          // reset pause state
-    sessionType = "focus";     // default session type
-    timeLeft = FOCUS_TIME;     // reset to 25 minutes
-    sessionLabel.textContent = "Focus Time";  // reset label
-    updateDisplay();           // update the screen
+    clearInterval(timer);
+    timer = null;
+    isPaused = false;
+    sessionType = "focus";
+    timeLeft = FOCUS_TIME;
+    sessionLabel.textContent = "Focus Time";
+    updateDisplay();
 });
 
 sessionType = "focus";
